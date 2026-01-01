@@ -1,0 +1,679 @@
+.admission-detail-container {
+  min-height: 100vh;
+  padding-bottom: 60px;
+}
+
+/* هدر */
+.detail-header {
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border-glass);
+  padding: 20px 40px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+}
+
+.detail-header .header-content {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-secondary);
+  font-size: 14px;
+  font-weight: 500;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px 0;
+  margin-bottom: 16px;
+  transition: color 0.2s;
+}
+
+.back-link:hover {
+  color: var(--brand-primary);
+}
+
+.back-link svg {
+  width: 18px;
+  height: 18px;
+}
+
+.admission-info-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.admission-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.admission-title h1 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.admission-number-badge {
+  background: var(--brand-light);
+  color: var(--brand-primary);
+  padding: 6px 14px;
+  border-radius: var(--radius-md);
+  font-size: 14px;
+  font-weight: 600;
+  font-family: var(--font-numbers);
+}
+
+.admission-meta-info {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.meta-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-secondary);
+  font-size: 14px;
+  font-family: var(--font-numbers);
+}
+
+.meta-item svg {
+  width: 18px;
+  height: 18px;
+  color: var(--text-muted);
+}
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: var(--radius-md);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.status-badge svg {
+  width: 16px;
+  height: 16px;
+}
+
+.status-badge.completed {
+  background: var(--success-light);
+  color: var(--success);
+}
+
+.status-badge.pending {
+  background: var(--warning-light);
+  color: var(--warning);
+}
+
+/* خلاصه آمار */
+.stats-section {
+  max-width: 1400px;
+  margin: 32px auto;
+  padding: 0 40px;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.stat-card {
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-xl);
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+}
+
+.stat-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.12);
+}
+
+.stat-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stat-icon svg {
+  width: 28px;
+  height: 28px;
+}
+
+.stat-icon.total {
+  background: rgba(37, 99, 235, 0.1);
+  color: var(--brand-primary);
+}
+
+.stat-icon.categories {
+  background: rgba(139, 92, 246, 0.1);
+  color: #8b5cf6;
+}
+
+.stat-icon.normal {
+  background: var(--success-light);
+  color: var(--success);
+}
+
+.stat-icon.abnormal {
+  background: var(--danger-light);
+  color: var(--danger);
+}
+
+.stat-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-value {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--text-primary);
+  font-family: var(--font-numbers);
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+/* بخش جستجو و فیلتر */
+.filter-section {
+  max-width: 1400px;
+  margin: 0 auto 24px;
+  padding: 0 40px;
+}
+
+.search-box {
+  position: relative;
+  max-width: 400px;
+}
+
+.search-box svg {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  color: var(--text-muted);
+}
+
+.search-box input {
+  width: 100%;
+  padding: 14px 48px 14px 44px;
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-lg);
+  font-size: 14px;
+  font-family: var(--font-numbers);
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: all 0.2s;
+}
+
+.search-box input:focus {
+  outline: none;
+  border-color: var(--brand-primary);
+  box-shadow: 0 0 0 3px var(--brand-light);
+}
+
+.search-box input::placeholder {
+  color: var(--text-muted);
+}
+
+.clear-search {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  padding: 4px;
+  cursor: pointer;
+  color: var(--text-muted);
+  transition: color 0.2s;
+}
+
+.clear-search:hover {
+  color: var(--text-primary);
+}
+
+.clear-search svg {
+  width: 16px;
+  height: 16px;
+  position: static;
+  transform: none;
+}
+
+/* دسته‌بندی‌ها */
+.categories-section {
+  max-width: 1400px;
+  margin: 0 auto 32px;
+  padding: 0 40px;
+}
+
+.categories-section h2 {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0 0 8px;
+}
+
+.section-desc {
+  color: var(--text-muted);
+  font-size: 14px;
+  margin: 0 0 20px;
+}
+
+.category-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.category-tab {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-lg);
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: inherit;
+}
+
+.category-tab:hover {
+  background: rgba(255, 255, 255, 0.6);
+  border-color: var(--category-color, var(--brand-primary));
+}
+
+.category-tab.active {
+  background: var(--category-color, var(--brand-primary));
+  color: white;
+  border-color: var(--category-color, var(--brand-primary));
+}
+
+.tab-name {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.tab-count {
+  background: rgba(0, 0, 0, 0.1);
+  padding: 2px 8px;
+  border-radius: var(--radius-sm);
+  font-size: 12px;
+  font-family: var(--font-numbers);
+}
+
+.category-tab.active .tab-count {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* بخش آزمایش‌ها */
+.tests-section {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.category-section {
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-xl);
+  padding: 28px;
+  margin-bottom: 24px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+}
+
+.category-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border-glass);
+}
+
+.category-info {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.category-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.category-icon svg {
+  width: 26px;
+  height: 26px;
+}
+
+.category-text h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0 0 4px;
+}
+
+.category-name-en {
+  font-size: 13px;
+  color: var(--text-muted);
+  font-family: var(--font-numbers);
+}
+
+.category-count {
+  background: rgba(255, 255, 255, 0.6);
+  padding: 6px 14px;
+  border-radius: var(--radius-md);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  font-family: var(--font-numbers);
+  border: 1px solid var(--border-glass);
+}
+
+.category-tests {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+/* نتیجه خالی */
+.no-results {
+  text-align: center;
+  padding: 60px 32px;
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--border-glass);
+}
+
+.no-results svg {
+  width: 48px;
+  height: 48px;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+}
+
+.no-results p {
+  color: var(--text-secondary);
+  font-size: 15px;
+  margin: 0;
+}
+
+/* صفحه یافت نشد */
+.not-found {
+  text-align: center;
+  padding: 100px 32px;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.not-found-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 24px;
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border-glass);
+}
+
+.not-found-icon svg {
+  width: 40px;
+  height: 40px;
+  color: var(--text-muted);
+}
+
+.not-found h2 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0 0 12px;
+}
+
+.not-found p {
+  color: var(--text-muted);
+  font-size: 15px;
+  margin: 0 0 24px;
+}
+
+.back-button {
+  padding: 12px 28px;
+  background: var(--brand-primary);
+  color: white;
+  border: none;
+  border-radius: var(--radius-md);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.back-button:hover {
+  background: var(--brand-secondary);
+  transform: translateY(-1px);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .detail-header {
+    padding: 16px 20px;
+  }
+
+  .stats-section,
+  .filter-section,
+  .categories-section,
+  .tests-section {
+    padding: 0 20px;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .admission-info-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .admission-meta-info {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .category-tabs {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    padding-bottom: 8px;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .category-tab {
+    flex-shrink: 0;
+  }
+
+  .category-tests {
+    grid-template-columns: 1fr;
+  }
+
+  .category-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+}
+
+/* ===== پروفایل‌های دسته‌بندی (بیوشیمی، هورمون، ...) ===== */
+.category-profiles {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.profile-section {
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 20px;
+  padding: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s;
+}
+
+.profile-section:hover {
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+}
+
+.profile-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.profile-info {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.profile-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.profile-icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.profile-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.profile-text h4 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.profile-name-en {
+  font-size: 13px;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.profile-description {
+  margin: 4px 0 0 0;
+  font-size: 13px;
+  color: var(--text-tertiary);
+  max-width: 400px;
+}
+
+.profile-count {
+  background: var(--profile-color, #2563eb);
+  color: white;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+
+.profile-tests {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+/* Responsive for profiles */
+@media (max-width: 768px) {
+  .profile-header {
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .profile-tests {
+    grid-template-columns: 1fr;
+  }
+  
+  .profile-icon {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .profile-icon svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+

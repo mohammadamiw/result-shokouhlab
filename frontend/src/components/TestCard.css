@@ -1,0 +1,260 @@
+.test-card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  border: 1px solid var(--border-glass);
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.test-card:hover {
+  background: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.12), 0 4px 16px rgba(0, 0, 0, 0.06);
+  border-color: var(--border-medium);
+  transform: translateY(-2px);
+}
+
+.test-card-content {
+  position: relative;
+  z-index: 2;
+}
+
+/* نوار رنگی بالا - فقط برای نرمال */
+.test-card-normal::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 3px;
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  background: var(--success);
+}
+
+/* Glow effect برای کارت‌های غیرنرمال */
+.test-card-high {
+  box-shadow: var(--glow-danger), 0 8px 32px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.test-card-high:hover {
+  box-shadow: var(--glow-danger), 0 12px 48px rgba(0, 0, 0, 0.12), 0 4px 16px rgba(0, 0, 0, 0.06);
+}
+
+.test-card-low {
+  box-shadow: var(--glow-warning), 0 8px 32px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.test-card-low:hover {
+  box-shadow: var(--glow-warning), 0 12px 48px rgba(0, 0, 0, 0.12), 0 4px 16px rgba(0, 0, 0, 0.06);
+}
+
+.test-card-unknown::before,
+.test-card-pending::before,
+.test-card-high::before,
+.test-card-low::before {
+  display: none;
+}
+
+/* هدر کارت */
+.test-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 16px;
+  gap: 12px;
+}
+
+.test-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0;
+  line-height: 1.5;
+  font-family: var(--font-numbers);
+}
+
+/* Badge وضعیت */
+.status-badge {
+  padding: 4px 10px;
+  border-radius: var(--radius-sm);
+  font-size: 11px;
+  font-weight: 600;
+  white-space: nowrap;
+  flex-shrink: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  backdrop-filter: var(--blur-light);
+  -webkit-backdrop-filter: var(--blur-light);
+}
+
+.status-normal {
+  background: var(--success-light);
+  color: var(--success);
+}
+
+.status-high {
+  background: var(--danger-light);
+  color: var(--danger);
+}
+
+.status-low {
+  background: var(--warning-light);
+  color: var(--warning);
+}
+
+.status-unknown {
+  background: rgba(255, 255, 255, 0.4);
+  color: var(--text-muted);
+}
+
+.status-pending {
+  background: var(--info-light);
+  color: var(--info);
+}
+
+/* بدنه کارت */
+.test-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* بخش نتیجه */
+.test-result-section {
+  text-align: center;
+  padding: 8px 0;
+}
+
+.result-value {
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--text-primary);
+  display: inline-flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 4px;
+  line-height: 1;
+  font-family: var(--font-numbers);
+  font-variant-numeric: tabular-nums;
+}
+
+.result-unit {
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--text-muted);
+  opacity: 0.7;
+  margin-right: 2px;
+  font-family: var(--font-numbers);
+  vertical-align: baseline;
+}
+
+/* نتیجه در حال بررسی */
+.result-pending {
+  font-size: 16px !important;
+  font-weight: 600;
+}
+
+.pending-text {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--info);
+  font-family: var(--font-primary);
+}
+
+.pending-icon {
+  width: 16px;
+  height: 16px;
+  animation: rotate 2s linear infinite;
+}
+
+.pending-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+@keyframes rotate {
+  to { transform: rotate(360deg); }
+}
+
+.pending-message {
+  text-align: center;
+  padding: 10px 12px;
+  background: var(--info-light);
+  border-radius: var(--radius-md);
+  font-size: 12px;
+  color: var(--info);
+  border: 1px solid rgba(2, 132, 199, 0.2);
+  backdrop-filter: var(--blur-light);
+  -webkit-backdrop-filter: var(--blur-light);
+}
+
+/* بخش محدوده */
+.test-range-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 12px;
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: var(--blur-light);
+  -webkit-backdrop-filter: var(--blur-light);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-glass);
+}
+
+.range-label {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  font-family: var(--font-primary);
+}
+
+.range-value {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  font-variant-numeric: tabular-nums;
+  font-family: var(--font-numbers);
+}
+
+/* انیمیشن ورود */
+.test-card {
+  animation: fadeInUp 0.3s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .test-card {
+    padding: 16px;
+  }
+
+  .result-value {
+    font-size: 28px;
+  }
+
+  .result-unit {
+    font-size: 14px;
+  }
+
+  .test-name {
+    font-size: 13px;
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "name": "lab-middleware-api",
+  "version": "1.0.0",
+  "description": "Middleware API for Parsipal Lab System - Legacy Wrapper",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "keywords": [
+    "lab",
+    "middleware",
+    "legacy-wrapper",
+    "parsipal"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.13.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.6.1",
+    "express": "^4.22.1",
+    "iconv-lite": "^0.6.3",
+    "moment-jalaali": "^0.9.2",
+    "persian-date": "^1.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  }
+}

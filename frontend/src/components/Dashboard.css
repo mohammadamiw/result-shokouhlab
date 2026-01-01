@@ -1,0 +1,305 @@
+.dashboard-container {
+  min-height: 100vh;
+  background: transparent;
+}
+
+/* هدر */
+.dashboard-header {
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border-glass);
+  padding: 24px 40px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06), 0 1px 4px rgba(0, 0, 0, 0.03);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-info h1 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+  letter-spacing: -0.5px;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.user-name {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--text-primary);
+  font-size: 15px;
+  font-weight: 600;
+  font-family: var(--font-numbers);
+}
+
+.user-name svg {
+  width: 18px;
+  height: 18px;
+  color: var(--brand-primary);
+}
+
+.national-id {
+  color: var(--text-secondary);
+  font-size: 13px;
+  font-weight: 400;
+  font-family: var(--font-numbers);
+}
+
+.logout-button {
+  background: rgba(255, 255, 255, 0.8);
+  color: var(--text-secondary);
+  border: 1px solid var(--border-glass);
+  padding: 10px 20px;
+  border-radius: var(--radius-md);
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  backdrop-filter: var(--blur-medium);
+  -webkit-backdrop-filter: var(--blur-medium);
+}
+
+.logout-button:hover {
+  background: var(--danger-light);
+  color: var(--danger);
+  border-color: rgba(220, 38, 38, 0.3);
+}
+
+/* کارت‌های خلاصه */
+.summary-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  max-width: 1400px;
+  margin: 32px auto;
+  padding: 0 40px;
+}
+
+.summary-card {
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-xl);
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.summary-card:hover {
+  background: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.12), 0 4px 16px rgba(0, 0, 0, 0.06);
+  transform: translateY(-2px);
+  border-color: var(--border-medium);
+}
+
+.summary-icon {
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-lg);
+  flex-shrink: 0;
+}
+
+.summary-icon svg {
+  width: 28px;
+  height: 28px;
+  stroke-width: 2;
+}
+
+.summary-card .summary-icon {
+  background: var(--brand-light);
+  color: var(--brand-primary);
+}
+
+.summary-card.completed .summary-icon {
+  background: var(--success-light);
+  color: var(--success);
+}
+
+.summary-card.pending .summary-icon {
+  background: var(--warning-light);
+  color: var(--warning);
+}
+
+.summary-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+}
+
+.summary-value {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+  font-family: var(--font-numbers);
+}
+
+.summary-label {
+  font-size: 13px;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+/* محتوای داشبورد */
+.dashboard-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 40px 48px;
+}
+
+/* تب‌ها */
+.tabs {
+  display: inline-flex;
+  gap: 4px;
+  margin-bottom: 32px;
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 4px;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-glass);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06), 0 1px 4px rgba(0, 0, 0, 0.03);
+}
+
+.tab {
+  padding: 12px 24px;
+  border: none;
+  background: transparent;
+  border-radius: var(--radius-md);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.tab:hover {
+  color: var(--text-primary);
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.tab.active {
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--brand-primary);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* لودینگ و ارور */
+.loading-container,
+.error-container {
+  text-align: center;
+  padding: 80px 32px;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: var(--blur-strong);
+  -webkit-backdrop-filter: var(--blur-strong);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--border-glass);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-top-color: var(--brand-primary);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  margin: 0 auto 20px;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.loading-container p {
+  color: var(--text-secondary);
+  font-size: 15px;
+}
+
+.error-container p {
+  color: var(--danger);
+  margin-bottom: 20px;
+  font-size: 15px;
+}
+
+.retry-button {
+  background: var(--brand-primary);
+  color: white;
+  border: none;
+  padding: 12px 28px;
+  border-radius: var(--radius-md);
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.retry-button:hover {
+  background: var(--brand-secondary);
+  box-shadow: var(--shadow-md);
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .summary-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard-header {
+    padding: 20px 24px;
+  }
+
+  .header-content {
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-start;
+  }
+
+  .summary-cards {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 0 24px;
+    margin: 24px auto;
+  }
+
+  .dashboard-content {
+    padding: 0 24px 32px;
+  }
+
+  .tabs {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .tab {
+    width: 100%;
+    text-align: center;
+  }
+}

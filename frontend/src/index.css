@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Shabnam:wght@300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* رنگ‌های اصلی - تم روشن با گرادیان */
+  --bg-primary: linear-gradient(135deg, #f0f9ff 0%, #faf5ff 100%);
+  --bg-secondary: rgba(255, 255, 255, 0.8);
+  --bg-tertiary: rgba(255, 255, 255, 0.6);
+  
+  /* رنگ‌های متن */
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #94a3b8;
+  
+  /* رنگ‌های برند */
+  --brand-primary: #2563eb;
+  --brand-secondary: #3b82f6;
+  --brand-light: rgba(37, 99, 235, 0.1);
+  
+  /* رنگ‌های وضعیت */
+  --success: #059669;
+  --success-light: rgba(5, 150, 105, 0.1);
+  --warning: #d97706;
+  --warning-light: rgba(217, 119, 6, 0.1);
+  --danger: #dc2626;
+  --danger-light: rgba(220, 38, 38, 0.1);
+  --info: #0284c7;
+  --info-light: rgba(2, 132, 199, 0.1);
+  
+  /* border با شفافیت */
+  --border-light: rgba(255, 255, 255, 0.6);
+  --border-medium: rgba(255, 255, 255, 0.8);
+  --border-glass: rgba(255, 255, 255, 0.5);
+  
+  /* سایه‌ها */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  
+  /* Glow effects برای کارت‌های غیرنرمال */
+  --glow-warning: 0 0 20px rgba(217, 119, 6, 0.3), 0 0 40px rgba(217, 119, 6, 0.15);
+  --glow-danger: 0 0 20px rgba(220, 38, 38, 0.3), 0 0 40px rgba(220, 38, 38, 0.15);
+  
+  /* radius */
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  
+  /* Backdrop blur */
+  --blur-strong: blur(20px);
+  --blur-medium: blur(16px);
+  --blur-light: blur(12px);
+  
+  /* فونت‌ها */
+  --font-primary: 'Vazirmatn', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-numbers: 'Shabnam', 'Vazirmatn', 'Courier New', monospace;
+}
+
+body {
+  font-family: var(--font-primary);
+  direction: rtl;
+  background: var(--bg-primary);
+  background-attachment: fixed;
+  color: var(--text-primary);
+  min-height: 100vh;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* فونت شبنم برای اعداد */
+.number, .result-value, .summary-value, .stat-value, 
+.test-count, .range-value, .admission-count,
+input[type="text"], input[type="password"] {
+  font-family: var(--font-numbers);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(37, 99, 235, 0.3);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(37, 99, 235, 0.5);
+}
+
+::selection {
+  background: var(--brand-primary);
+  color: white;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+:focus-visible {
+  outline: 2px solid var(--brand-primary);
+  outline-offset: 2px;
+}
